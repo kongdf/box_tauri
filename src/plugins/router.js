@@ -8,7 +8,11 @@ const routes = [
         name: "/",
         component: () => import("@/views/home/index.vue"),
     },
-
+    {
+        path: "/home2",
+        name: "home2",
+        component: () => import("@/views/home2/index.vue"),
+    },
 ];
 
 // 导出路由
