@@ -24,7 +24,7 @@
     };
     async function greet() {
         state.loading = true;
-        state.list = await invoke("Crawler_WallHaven", {
+        state.list = await invoke("greet", {
             page: "1",
         });
         state.bigList = [];
