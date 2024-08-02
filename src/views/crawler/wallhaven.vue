@@ -17,7 +17,7 @@
         let parts = element.split("/");
         let url = `https://w.wallhaven.cc/full/${parts[4]}/wallhaven-${parts[5]}`;
             console.log(url)
-        let status = await invoke("downloadImg", {
+        let status = await invoke("download_img", {
             url,
         });
         // console.log(status)

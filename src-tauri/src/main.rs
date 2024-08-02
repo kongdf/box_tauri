@@ -10,11 +10,7 @@ use tauri::{command, State};
 #[tauri::command]
 async fn greet(page: String) -> Vec<std::string::String> {
     let url = format!("https://wallhaven.cc/toplist?page={}", page);
-    println!("开始打开网址:{}", url);
-    let response = reqwest::get(&url).await.unwrap();
-    println!("接收:{}", url);
-    // let status = response.status();
-
+    let response = reqwest::get(&url).await.unwrap(); 
     let body = response.text().await.unwrap();
     let document = Html::parse_document(&body);
     let selector = Selector::parse(".lazyload").unwrap();
@@ -28,7 +24,7 @@ async fn greet(page: String) -> Vec<std::string::String> {
     data_srcs
 }
 #[tauri::command]
-async fn downloadImg(url: String) {
+async fn download_img(url: String) {
     let folder_path = "download";
     if !Path::new(&folder_path).exists() {
         create_dir_all(folder_path).unwrap();
@@ -49,7 +45,7 @@ fn main() {
     tauri::Builder::default()
         // .plugin(tauri_plugin_fs::init())
         .plugin(tauri_plugin_shell::init())
-        .invoke_handler(tauri::generate_handler![greet, downloadImg])
+        .invoke_handler(tauri::generate_handler![greet, download_img])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
