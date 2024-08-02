@@ -16,10 +16,10 @@
     const downIMG = async (element) => {
         let parts = element.split("/");
         let url = `https://w.wallhaven.cc/full/${parts[4]}/wallhaven-${parts[5]}`;
-
-        // let status = await invoke("Crawler_DownImg", {
-        //     url,
-        // });
+            console.log(url)
+        let status = await invoke("downloadImg", {
+            url,
+        });
         // console.log(status)
     };
     async function greet() {
