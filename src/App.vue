@@ -55,52 +55,52 @@
     });
     const menulist = [
         { index: "/", icon: HomeFilled, title: "导航" },
-        { index: "home2", icon: Notebook, title: "笔记" },
-        {
-            index: "1",
-            icon: Document,
-            title: "word工具",
-            submenu: [
-                { index: "read", title: "word预览" },
-                { index: "readExcel", title: "Excel预览" },
-                { index: "downExcel", title: "Excel下载" },
-            ],
-        },
-        {
-            index: "2",
-            icon: Headset,
-            title: "音视频工具",
-            submenu: [
-                { index: "recording", title: "录像" },
-                { index: "recordingScreen", title: "录屏" },
-                { index: "videoConversion", title: "视频转换器" },
-                { index: "audioConversion", title: "音频转换器" },
-            ],
-        },
         {
             index: "3",
             icon: Picture,
             title: "图片工具",
-            submenu: [{ index: "pictureZip", title: "图片压缩" }],
-        },
-        {
-            index: "4",
-            icon: Collection,
-            title: "收藏资源",
             submenu: [
-                { index: "soft", title: "软件" },
-                { index: "study", title: "教程" },
-                { index: "resources", title: "资源" },
+                { index: "wallhaven", title: "Wallhaven壁纸" },
+                { index: "pictureZip", title: "图片压缩" },
             ],
         },
+        // { index: "home2", icon: Notebook, title: "笔记" },
+        // {
+        //     index: "1",
+        //     icon: Document,
+        //     title: "爬虫",
+        //     submenu: [
+        //         { index: "wallhaven", title: "wallhaven壁纸" },
+        //         { index: "readExcel", title: "Excel预览" },
+        //         { index: "downExcel", title: "Excel下载" },
+        //     ],
+        // },
+        // {
+        //     index: "2",
+        //     icon: Headset,
+        //     title: "音视频工具",
+        //     submenu: [
+        //         { index: "recording", title: "录像" },
+        //         { index: "recordingScreen", title: "录屏" },
+        //         { index: "videoConversion", title: "视频转换器" },
+        //         { index: "audioConversion", title: "音频转换器" },
+        //     ],
+        // },
+
+        // {
+        //     index: "4",
+        //     icon: Collection,
+        //     title: "收藏资源",
+        //     submenu: [
+        //         { index: "soft", title: "软件" },
+        //         { index: "study", title: "教程" },
+        //         { index: "resources", title: "资源" },
+        //     ],
+        // },
         {
-            index: "5",
+            index: "setting",
             icon: Tools,
-            title: "孔大夫的工具箱",
-            submenu: [
-                { index: "wxgzh", title: "微信公众号" },
-                { index: "wxm", title: "微信小程序" },
-            ],
+            title: "设置",
         },
     ];
 </script>

@@ -1,5 +1,5 @@
 {
-  "productName": "wallhaventop",
+  "productName": "孔大夫的工具箱",
   "version": "0.0.0",
   "identifier": "com.tauri.dev",
   "build": {
@@ -11,7 +11,7 @@
   "app": {
     "windows": [
       {
-        "title": "wallhaventop",
+        "title": "孔大夫的工具箱",
         "width": 1200,
         "height": 800
       }

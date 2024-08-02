@@ -1,11 +1,12 @@
 // Prevents additional console window on Windows in release, DO NOT REMOVE!!
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
+
 use reqwest::{Error, Response};
 use scraper::{Html, Selector};
-use serde_json::{json, Value};
 use tauri::{command, State};
+ 
 #[tauri::command]
-async fn greet(page: String) -> Vec<std::string::String> {
+async fn Crawler_WallHaven(page: String) -> Vec<std::string::String> {
     let url = format!("https://wallhaven.cc/toplist?page={}", page);
     println!("开始打开网址:{}", url);
     let response = reqwest::get(&url).await.unwrap();
@@ -28,7 +29,7 @@ async fn greet(page: String) -> Vec<std::string::String> {
 fn main() {
     tauri::Builder::default()
         .plugin(tauri_plugin_shell::init())
-        .invoke_handler(tauri::generate_handler![greet])
+        .invoke_handler(tauri::generate_handler![Crawler_WallHaven])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
