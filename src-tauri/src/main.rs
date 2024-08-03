@@ -26,16 +26,18 @@ async fn greet(page: String) -> Vec<std::string::String> {
 #[tauri::command]
 async fn download_img(url: String) {
     let folder_path = "download";
+
     if !Path::new(&folder_path).exists() {
         create_dir_all(folder_path).unwrap();
         println!("Folder created successfully.");
     }
+    println!("下载图片地址: {}", _url);
 
-    let img_url = "https://w.wallhaven.cc/full/d6/wallhaven-d6yrml.jpg";
+    // let _url = "https://w.wallhaven.cc/full/d6/wallhaven-d6yrml.jpg";
 
-    let mut resp = reqwest::blocking::get(img_url).unwrap();
-    let mut out = File::create("download/img.jpg").unwrap();
-    resp.copy_to(&mut out).unwrap();
+    // let mut resp = reqwest::blocking::get(_url).await.unwrap();
+    // let mut out = File::create("download/img.jpg").unwrap();
+    // resp.copy_to(&mut out).unwrap();
     // Command::new("open download")
     //    .output()
     //    .expect("Failed to execute command");

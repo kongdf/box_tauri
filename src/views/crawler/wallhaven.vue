@@ -1,4 +1,5 @@
 <template>
+    <p @click="test">111</p>
     <el-scrollbar height="100%" ref="ChatScrollBarRef" v-loading="state.loading">
         <template v-for="(url, index) in state.list" :key="url">
             <el-image style="width: 25%" fit="cover" @click="downIMG(url)" :src="url" lazy />
@@ -13,6 +14,35 @@
         loading: false,
         bigList: [],
     });
+    const test=()=>{
+        let url='https://w.wallhaven.cc/full/p9/wallhaven-p913ep.jpg'
+
+        fetch(url).then(
+            (res) => {
+                res.blob().then(
+                    (blob) => {
+                        console.log(blob)
+                        download(blob, '1.jpg');
+                    },
+                    (err) => {
+                        console.log(err);
+                    }
+                );
+            },
+            (err) => {
+                console.log(err);
+            }
+        );
+    }
+    const download = (blob, name) => {
+        let href = window.URL.createObjectURL(blob);
+        let eleLink = document.createElement("a");
+        eleLink.download = name;
+        eleLink.href = href;
+        eleLink.click();
+        eleLink.remove();
+        window.URL.revokeObjectURL(href);
+    };
     const downIMG = async (element) => {
         let parts = element.split("/");
         let url = `https://w.wallhaven.cc/full/${parts[4]}/wallhaven-${parts[5]}`;
