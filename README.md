@@ -1,8 +1,18 @@
-# Tauri + Vue 3
-<!-- test -->
+# box_tauri
 
-This template should help get you started developing with Tauri + Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## todo 
 
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+- [x] 爬取壁纸
+  - [x] 爬取
+  - [ ] 翻页
+  - [ ] 保存
+- [ ] 音视频转换
+- [ ] pdf工具
+  - [ ] 合并
+  - [ ] 转word
+  - [ ] 转图片
+- [ ] 图片压缩
+- [ ] excel预览
+- [ ] 小红书下载
+- [ ] 抖音下载
+- [ ] 腾讯视频下载 

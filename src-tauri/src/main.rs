@@ -22,25 +22,30 @@ async fn greet(page: String) -> Vec<std::string::String> {
         }
     }
     data_srcs
-}
+} 
+
 #[tauri::command]
 async fn download_img(url: String) {
     let folder_path = "download";
-
-    if !Path::new(&folder_path).exists() {
-        create_dir_all(folder_path).unwrap();
+    // 创建下载文件夹，如果不存在
+    if!Path::new(&folder_path).exists() {
+        if let Err(e) = std::fs::create_dir_all(folder_path) {
+            println!("创建文件夹时出错: {}", e);
+            return;
+        }
         println!("Folder created successfully.");
-    }
-    println!("下载图片地址: {}", _url);
+    } 
+    println!("下载图片地址: {}", url);
 
-    // let _url = "https://w.wallhaven.cc/full/d6/wallhaven-d6yrml.jpg";
+    let client = reqwest::Client::new();
+    let resp = client.get(url).await.unwrap();
+ 
+    let mut out = File::create("download/img.jpg").unwrap();
+    resp.copy_to(&mut out).unwrap();
 
-    // let mut resp = reqwest::blocking::get(_url).await.unwrap();
-    // let mut out = File::create("download/img.jpg").unwrap();
-    // resp.copy_to(&mut out).unwrap();
-    // Command::new("open download")
-    //    .output()
-    //    .expect("Failed to execute command");
+
+
+
 }
 
 fn main() {
